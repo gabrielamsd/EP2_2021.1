@@ -56,3 +56,10 @@ def possui_movimentos_possiveis(baralho):
         if lista_movimentos_possiveis(baralho, e) == [1] or lista_movimentos_possiveis(baralho, e) == [3] or lista_movimentos_possiveis(baralho, e) == [1, 3]:
             return True
     return False
+
+def cartas(baralho):
+    cartas = ''
+    for i in baralho:
+        cartas += '{}. {} \n'.format(baralho.index(i) + 1, i)
+    return cartas
+
