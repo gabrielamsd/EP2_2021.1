@@ -45,3 +45,11 @@ def empilha(baralho, inicial, final):
     baralho[final] = baralho[inicial]
     del baralho[inicial]
     return baralho
+
+    # verifica se ainda existem movimentos a ser feitos nesse baralho
+def possui_movimentos_possiveis(baralho):
+    for e in baralho:
+        if lista_movimentos_possiveis(baralho, e) == []:
+            return False
+        if lista_movimentos_possiveis(baralho, e) == [1] or lista_movimentos_possiveis(baralho, e) == [3] or lista_movimentos_possiveis(baralho, e) == [1, 3]:
+            return True
