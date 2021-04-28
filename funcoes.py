@@ -39,3 +39,9 @@ def lista_movimentos_possiveis(baralho, i):
         
         else:
             return []
+
+# empilha a carta sendo observada nao lugar da carta de destino escolhida (sempre 1 ou 3 para trás da posição da inicial da carta)
+def empilha(baralho, inicial, final):
+    baralho[final] = baralho[inicial]
+    del baralho[inicial]
+    return baralho
