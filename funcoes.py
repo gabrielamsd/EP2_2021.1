@@ -29,12 +29,16 @@ def lista_movimentos_possiveis(baralho, i):
         else:
             return []
     if i >= 3:
+        mesmo_valor_1 = (extrai_valor(baralho[i]) == extrai_valor(baralho[i-1]))
+        mesmo_valor_3 = (extrai_valor(baralho[i]) == extrai_valor(baralho[i-3]))
+        mesmo_naipe_1 = (extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-1]))
+        mesmo_naipe_3 = (extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-3]))
 
-        if ((extrai_valor(baralho[i]) == extrai_valor(baralho[i-1])) or (extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-1]))) and ((extrai_valor(baralho[i]) == extrai_valor(baralho[i-3])) or (extrai_naipe(baralho[i])== extrai_naipe(baralho[i-3]))):
+        if (mesmo_valor_1 or mesmo_naipe_1 ) and ( mesmo_valor_3 or mesmo_naipe_3 ):
             return [1, 3]
-        elif (extrai_valor(baralho[i]) == extrai_valor(baralho[i-1])) or (extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-1])):
+        elif mesmo_valor_1 or mesmo_naipe_1:
             return [1]
-        elif (extrai_valor(baralho[i]) == extrai_valor(baralho[i-3])) or (extrai_naipe(baralho[i])== extrai_naipe(baralho[i-3])):
+        elif mesmo_valor_3 or mesmo_naipe_3:
             return [3]
         
         else:
