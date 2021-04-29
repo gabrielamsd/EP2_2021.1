@@ -10,7 +10,7 @@ def extrai_naipe(string):
     naipe = string[-1]
     return naipe
 
-    # extrai o valor de uma carta quando a função recebe essa carta
+# extrai o valor de uma carta quando a função recebe essa carta
 def extrai_valor(string):
     if string[1] == '0':
         valor = string[0:2]
@@ -19,7 +19,7 @@ def extrai_valor(string):
         valor = string[0]
         return valor
 
-        # vendo as possíveis posições de uma carta dentro de uma lista de cartas durante o jogo   
+# vendo as possíveis posições de uma carta dentro de uma lista de cartas durante o jogo   
 def lista_movimentos_possiveis(baralho, i):
     if i == 0:
         return []
@@ -50,16 +50,16 @@ def empilha(baralho, inicial, final):
     del baralho[inicial]
     return baralho
 
-    # verifica se ainda existem movimentos a ser feitos nesse baralho
+# verifica se ainda existem movimentos a ser feitos nesse baralho
 def possui_movimentos_possiveis(baralho):
     for e in range(len(baralho)):
         if lista_movimentos_possiveis(baralho, e) == [1] or lista_movimentos_possiveis(baralho, e) == [3] or lista_movimentos_possiveis(baralho, e) == [1, 3]:
             return True
     return False
 
+# coloca as cartas em coluna para melhor visualização do jogador
 def cartas(baralho):
     cartas = ''
     for i in baralho:
         cartas += '{}. {} \n'.format(baralho.index(i) + 1, i)
     return cartas
-
