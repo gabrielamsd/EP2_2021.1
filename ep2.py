@@ -16,8 +16,8 @@ while inválido:
         inicial = int(input('Qual é a posição da carta que você quer mexer? \nposição inicial: '))
         possibilidades = lista_movimentos_possiveis(baralho_do_jogador, inicial)
         final = int(input('Qual é a posição para a qual você quer mover essa carta? \nposição final: '))
-        inicial -= 1
-        final -= 1
+        inicial += 1
+        final += 1
         if inicial - final == 1 or inicial - final == 3:            
             if lista_movimentos_possiveis(baralho_do_jogador, inicial) == []:
                 print('Você não pode fazer esse movimento, tente novamente: ')
