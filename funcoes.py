@@ -61,5 +61,5 @@ def possui_movimentos_possiveis(baralho):
 def cartas(baralho):
     cartas = ''
     for i in baralho:
-        cartas += '{}. {} \n'.format(baralho.index(i) + 1, i)
+        cartas += '{}. {} \n'.format(baralho.index(i), i)
     return cartas
